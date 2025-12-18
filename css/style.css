@@ -1,8 +1,33 @@
 /* Global styles for the site */
-body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:20px; color:#111 }
-.nav { display:flex; gap:10px; margin-bottom:20px }
-.nav a { padding:8px 12px; background:#007bff; color:#fff; text-decoration:none; border-radius:4px }
-.nav a:hover { background:#0056b3 }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0 20px 20px 20px; color:#111 }
+.nav {
+  display: block;
+  /* extend the bar into the page gutters so it appears flush left/right
+     while leaving the body's margins unchanged for other content */
+  width: calc(100% + 40px);
+  margin: 0 -20px 12px -20px;
+  padding: 4px 12px;
+  background: #efeff1; /* full-width toolbar look inside content area */
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.04);
+  line-height: 1;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  background: transparent; /* remove bubble */
+  color: #111;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-left: 1px solid rgba(0,0,0,0.06); /* thin separator */
+  margin-right: 0;
+}
+
+.nav a:first-child { border-left: none }
+
+.nav a:hover { background: rgba(0,0,0,0.03) }
+.nav a.active { background: rgba(170,196,255,0.12) }
 
 /* Utility */
 h1 { margin-top:0 }
